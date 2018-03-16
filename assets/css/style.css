@@ -32,6 +32,10 @@ body {
     margin: 4px;
 }
 
+.gif {
+    margin: 2px;
+}
+
 #logo {
     border: 4px solid black;
     border-radius: 1em;
@@ -40,4 +44,9 @@ body {
 
 #userinput {
     background-color: darkblue;
+}
+
+#gifcontainer {
+    left: 12px;
+    background-color: rgba(87, 119, 166, .5);
 }
