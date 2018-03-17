@@ -25,7 +25,7 @@ function getGifs() {
     clearAllGifs();
     var siteString = "https://api.giphy.com/v1/gifs/search?"
     var apiKeyString = "api_key=4N43c1L84737DmVNlPdGssWrMq32sIeT"
-    var queryString = "&q=" + searchString + "&limit=25&offset=0&rating=G&lang=en"
+    var queryString = "&q=" + searchString + "&limit=25&offset=0&lang=en"
     var queryString = siteString + apiKeyString + queryString
     $.ajax({
         url: queryString,
@@ -41,14 +41,21 @@ function getGifs() {
 
 function addGif(staticURL, animatedURL, rating) {
     var image = $("<img>");
+    var newDiv = $("<span>");
+    newDiv.addClass("gifContainer")
+    newDiv.html ("<p><b>Rating: " + rating + "</b></p>")
+    //image.append(newDiv);
+    // image.prepend(image,"<p>Rating: " + rating + "</p>");
     image.addClass("gif");
     image.attr("src", staticURL)
             .attr("data-staticurl", staticURL)
                 .attr("data-animatedurl",animatedURL)
                     .attr("data-rating", rating)
                         .attr("data-status", "static")
-                            .attr("alt", "gif not available");
-    $("#gifcontainer").append(image);
+                            .attr("alt", "gif not available"); 
+    newDiv.prepend(image);                        
+    $("#gifcontainer").append(newDiv);
+
 }
 
 function clearAllGifs() {

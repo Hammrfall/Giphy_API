@@ -33,7 +33,14 @@ body {
 }
 
 .gif {
-    margin: 2px;
+    margin: 5px;
+
+}
+
+.gifContainer {
+    float: left;
+    color: white;
+    text-shadow: black 1px 1px;
 }
 
 #logo {
